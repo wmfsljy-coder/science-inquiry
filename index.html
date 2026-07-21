@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>과학탐구실험 — 관측 스테이션</title>
+<style>
+  :root {
+    --abyss: #061621; --panel: #0c2438; --panel-2: #102c44; --rail: #081b2b;
+    --foam: #eaf3f2; --mist: #a9c3ca; --teal: #3fc9b0; --teal-dim: #2a8f7c;
+    --coral: #f2965c; --cold: #6fa8e0; --violet: #b79cf0; --line: #1c3c52; --ink: #eaf3f2;
+  }
+  :root[data-theme="light"] {
+    --abyss: #eef5f4; --panel: #ffffff; --panel-2: #f4f9f8; --rail: #e2edec;
+    --foam: #0c2233; --mist: #4a6270; --teal: #1f9683; --teal-dim: #17765f;
+    --coral: #d97a3f; --cold: #3a72b8; --violet: #7c5cc4; --line: #d3e2e0; --ink: #0c2233;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --abyss: #eef5f4; --panel: #ffffff; --panel-2: #f4f9f8; --rail: #e2edec;
+      --foam: #0c2233; --mist: #4a6270; --teal: #1f9683; --teal-dim: #17765f;
+      --coral: #d97a3f; --cold: #3a72b8; --violet: #7c5cc4; --line: #d3e2e0; --ink: #0c2233;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--abyss); color: var(--ink);
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    min-height: 100vh;
+  }
+  .display { font-family: Georgia, "Noto Serif KR", "Batang", serif; }
+  .hero { padding: 64px 30px 30px; max-width: 1080px; margin: 0 auto; }
+  .hero a.back { color: var(--mist); font-size: 12.5px; text-decoration: none; }
+  .hero a.back:hover { color: var(--teal); }
+  .hero .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin-top: 14px; display: block; }
+  .hero h1 { font-size: clamp(30px, 5vw, 46px); margin: 10px 0 14px; text-wrap: balance; }
+  .hero p { color: var(--mist); font-size: 15.5px; line-height: 1.7; max-width: 640px; margin: 0; }
+
+  .grid { max-width: 1080px; margin: 30px auto 80px; padding: 0 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  .book-card {
+    display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 26px; text-decoration: none; color: inherit; transition: border-color .15s, transform .15s;
+    position: relative; overflow: hidden;
+  }
+  .book-card:hover { border-color: var(--teal-dim); transform: translateY(-2px); }
+  .book-card .icon-badge { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+  .book-card.c-coral .icon-badge { background: rgba(242,150,92,.16); color: var(--coral); }
+  .book-card.c-cold .icon-badge { background: rgba(111,168,224,.16); color: var(--cold); }
+  .book-card h3 { font-size: 21px; margin: 0 0 8px; }
+  .book-card p { color: var(--mist); font-size: 13.5px; line-height: 1.7; margin: 0 0 16px; }
+  .book-card .topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .book-card .topics span { font-size: 10.5px; padding: 3px 8px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--mist); }
+  .book-card .status-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: rgba(63,201,176,.16); color: var(--teal); margin-top: 12px; }
+  .book-card .go { position: absolute; top: 26px; right: 26px; color: var(--mist); font-size: 18px; }
+
+  .theme-toggle { position: fixed; top: 16px; right: 18px; background: var(--panel); border: 1px solid var(--line); color: var(--mist); border-radius: 999px; padding: 6px 12px; font-size: 11px; cursor: pointer; z-index: 10; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a class="back" href="https://wmfsljy-coder.github.io/science-teacher-hub/">← 지구과학 교사 웹툴 모음</a>
+  <span class="eyebrow">고등학교 과학탐구실험 · 인터랙티브 학습 도구</span>
+  <h1 class="display">과학탐구실험<br>관측 스테이션</h1>
+  <p>과학탐구실험은 1권과 2권으로 나뉘며, 과학의 본성과 탐구 방법부터 생활 속 과학, 첨단 과학 기술까지 다룹니다. 아래에서 학습할 책을 선택하세요.</p>
+</div>
+
+<div class="grid">
+  <a class="book-card c-coral" href="https://wmfsljy-coder.github.io/science-inquiry-1/">
+    <div class="icon-badge">🔬</div>
+    <h3 class="display">과학탐구실험1</h3>
+    <p>과학의 본성과 역사 속의 과학 탐구, 과학 탐구의 과정과 절차를 다룹니다. 과학사 사례부터 변인 통제, 데이터 시각화까지 학습합니다.</p>
+    <div class="topics"><span>과학의 본성</span><span>과학사</span><span>변인 통제</span><span>데이터 시각화</span></div>
+    <span class="status-pill">● 2개 단원 완성</span>
+    <div class="go">→</div>
+  </a>
+  <a class="book-card c-cold" href="https://wmfsljy-coder.github.io/science-inquiry-2/">
+    <div class="icon-badge">🧪</div>
+    <h3 class="display">과학탐구실험2</h3>
+    <p>생활 속의 과학 탐구, 미래 사회와 첨단 과학 탐구를 다룹니다. 일상 속 과학 원리부터 첨단 기술, 센서 탐구 설계까지 학습합니다.</p>
+    <div class="topics"><span>생활 속 과학</span><span>문제 해결 과정</span><span>첨단 기술</span><span>탐구 설계</span></div>
+    <span class="status-pill">● 2개 단원 완성</span>
+    <div class="go">→</div>
+  </a>
+</div>
+
+<button class="theme-toggle" id="themeToggle">라이트 모드</button>
+<script>
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("themeToggle");
+  themeBtn.addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme");
+    var next = cur === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    themeBtn.textContent = next === "dark" ? "라이트 모드" : "다크 모드";
+  });
+})();
+</script>
+</body>
+</html>
