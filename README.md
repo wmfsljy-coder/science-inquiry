@@ -1,6 +1,9 @@
 # 과학탐구실험
 
-이 저장소는 과목 **허브(목차 페이지)** 입니다. 단원은 아래 저장소에 있습니다.
+이 저장소는 과목 **허브(목차 페이지)** 입니다. `index.html` 한 장과 QR 도구(`assets/qrcode.js`)만 있고, 단원은 아래 저장소에 있습니다.
+
+- [science-inquiry-1](https://github.com/wmfsljy-coder/science-inquiry-1) — https://wmfsljy-coder.github.io/science-inquiry-1/
+- [science-inquiry-2](https://github.com/wmfsljy-coder/science-inquiry-2) — https://wmfsljy-coder.github.io/science-inquiry-2/
 
 - 바로 열기: https://wmfsljy-coder.github.io/science-inquiry/
 
@@ -8,8 +11,8 @@
 
 1. 이 저장소를 **Fork** 하거나 *Use this template* 으로 복사합니다.
 2. Settings → Pages → Branch 를 `main` / `(root)` 로 두면 몇 분 뒤 `https://<내 계정>.github.io/science-inquiry/` 에 열립니다.
-3. **우리 반 공유**를 쓰려면 `assets/share-config.js` 의 주소를 내 Apps Script 웹 앱 주소로 바꿉니다(만드는 법: science-teacher-hub 의 [GUIDE.md](https://github.com/wmfsljy-coder/science-teacher-hub/blob/main/GUIDE.md)). 바꾸지 않으면 공유 기능만 꺼지고 나머지는 그대로 됩니다.
-4. 반 목록을 고르게 하려면 `assets/share-config.js` 에 `window.STH_CLASSES = [{ v: "1-1", t: "1학년 1반" }, …]` 를 적습니다.
+3. 목차의 단원 링크는 원래 주소(`https://wmfsljy-coder.github.io/…`)를 가리킵니다. 내 계정으로 옮겼다면 `index.html` 의 링크 주소를 내 계정 주소로 바꿉니다.
+4. 이 저장소에는 공유 설정 파일이 없습니다. **우리 반 공유**(Apps Script 주소)와 반 목록(`window.STH_CLASSES`)은 단원 저장소(science-inquiry-1, science-inquiry-2)의 `assets/share-config.js` 에서 바꿉니다(만드는 법: science-teacher-hub 의 [GUIDE.md](https://github.com/wmfsljy-coder/science-teacher-hub/blob/main/GUIDE.md)). 바꾸지 않으면 공유 기능만 꺼지고 나머지는 그대로 됩니다.
 
 ## 라이선스
 
